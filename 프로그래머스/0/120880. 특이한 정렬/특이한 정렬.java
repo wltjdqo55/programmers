@@ -8,6 +8,8 @@ class Solution {
             list.add(num);
         }
 
+    
+        
         // 커스텀 정렬: n과의 차이로 정렬
         list.sort((a, b) -> {
             int diff1 = Math.abs(a - n);
