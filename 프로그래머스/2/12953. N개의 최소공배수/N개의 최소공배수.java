@@ -2,26 +2,25 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] arr) {
-        int answer = 0;
+        int answer = arr[0];
         
-        Arrays.sort(arr);
-        
-        int max_num = arr[arr.length-1];
-        
-        for(int i = max_num ; i < 99999999 ; i += max_num) {
-            boolean flag = true;
-            for(int j = 0 ; j < arr.length - 1 ; j++){
-                if(i % arr[j] == 0) continue;
-                else flag = false;
-            }
-            
-            if(flag){
-                answer = i;
-                break;
-            }
+        for(int i = 0 ; i < arr.length ; i++) {
+            answer = lcm(answer, arr[i]);
         }
         
         return answer;
     }
     
+    private int lcm(int a , int b) {
+        return a * (b / gcd(a, b));
+    }
+    
+    private int gcd(int a, int b) {
+        while(b != 0) {
+            int temp = a % b;
+            a = b;
+            b = temp;
+        }
+        return a;
+    }
 }
