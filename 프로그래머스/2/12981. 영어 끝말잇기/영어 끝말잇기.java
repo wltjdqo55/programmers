@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 class Solution {
     public int[] solution(int n, String[] words) {
-        int[] answer = new int[2];
+        int[] answer = {0,0};
         
         HashMap<String, Boolean> map = new HashMap<>();
         
